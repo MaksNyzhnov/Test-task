@@ -1,0 +1,27 @@
+.login_form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login_form > label {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.login_form > input {
+  padding: 5px;
+  margin-bottom: 24px;
+}
+.login_form > button {
+  padding: 5px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 15px;
+  background-color: transparent;
+}
+.login_form > button:hover,
+.login_form > button:active {
+  background-color: rgba(58, 57, 57, 0.5);
+}
