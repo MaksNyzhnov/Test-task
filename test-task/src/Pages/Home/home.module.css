@@ -1,3 +1,10 @@
 .resource_list {
   list-style: none;
 }
+.resource_list > li {
+  padding: 5px;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}

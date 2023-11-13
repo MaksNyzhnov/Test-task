@@ -16,6 +16,7 @@ const initialState = {
     },
   ],
   isLoggedIn: false,
+  currentFeed: "",
 };
 
 const feedSlice = createSlice({
@@ -28,12 +29,19 @@ const feedSlice = createSlice({
     removeFeed(state, action) {
       state.feeds.splice(state.feeds.indexOf(action.payload), 1);
     },
+    setFeedTopic(state, action) {
+      state.currentFeed = action.payload;
+    },
     toggleLogin(state) {
       state.isLoggedIn = !state.isLoggedIn;
+    },
+    reloadFeeds(state) {
+      state.feeds = initialState.feeds;
     },
   },
 });
 
-export const { addFeed, removeFeed, toggleLogin } = feedSlice.actions;
+export const { addFeed, removeFeed, toggleLogin, setFeedTopic, reloadFeeds } =
+  feedSlice.actions;
 
 export default feedSlice.reducer;

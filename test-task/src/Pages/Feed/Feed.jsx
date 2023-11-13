@@ -1,17 +1,22 @@
+
 import axios from "axios"
 import { useState, useEffect } from "react"
 import Article from "../../Components/Article/Article"
 
+;
 
 const Feed = () => {
-    const [articles, setArticle] = useState([])
+  const [articles, setArticles] = useState([])
+  
+  
+  
+  
 
-  console.log(articles)
 
   const getArticles = async () => {
     try {
       const res = await axios.get('http://localhost:8888/')
-      setArticle(res.data)
+      setArticles(res.data)
     } catch (error) {
       console.log(error.message)
     }

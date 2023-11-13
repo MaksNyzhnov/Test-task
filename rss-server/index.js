@@ -2,7 +2,7 @@ import cors from "cors";
 import express from "express";
 import RSSParcer from "rss-parser";
 
-const feedURL = "https://netflixtechblog.com/feed";
+let feedURL = "https://www.nasa.gov/news-release/feed/";
 
 const parser = new RSSParcer();
 
@@ -15,16 +15,18 @@ const parse = async (url) => {
     articles.push({ article });
   });
 };
-parse(feedURL);
 
 let app = express();
 app.use(cors());
+app.use(express.json());
 
 app.get("/", (req, res) => {
   res.send(articles);
 });
 
-const server = app.listen("8888", () => {
+parse(feedURL);
+
+const server = app.listen("8080", () => {
   console.log("App is listening on http://localhost:8888");
 });
 
