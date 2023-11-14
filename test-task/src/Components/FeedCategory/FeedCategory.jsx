@@ -10,7 +10,7 @@ const FeedCategory = ({ title, link }) => {
     const dispatch = useDispatch();
    
     const onLinkClick = () => {
-        setFeedURL(link)
+        
         dispatch(setFeedTopic(link))
         
     }

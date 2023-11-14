@@ -2,7 +2,7 @@ import { useState } from "react";
 import {useDispatch} from "react-redux"
 import { nanoid } from "nanoid";
 import css from "./LoginForm.module.css";
-import {toggleLogin} from '../../Redux/feedSlice'
+import {toggleLogin, setUserId} from '../../Redux/feedSlice'
 
 const nameInputId = nanoid(5);
 const passwordInputId = nanoid(5);
@@ -23,6 +23,7 @@ const LoginForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     dispatch(toggleLogin())
+    dispatch(setUserId(1))
     setName("");
     setPassword("");
 

@@ -1,0 +1,19 @@
+.add_feed_block {
+  padding: 5px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.add_feed_block > button {
+  padding: 5px 10px;
+  font-size: 12px;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+.add_feed_block > input {
+  padding: 5px;
+  max-width: 50%;
+  border: 1px solid black;
+  border-radius: 15px;
+}

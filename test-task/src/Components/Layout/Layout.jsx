@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import { Suspense } from "react";
 import { useSelector } from 'react-redux';
 import { useDispatch } from "react-redux"
-import {toggleLogin} from '../../Redux/feedSlice'
+import {toggleLogin, setUserId} from '../../Redux/feedSlice'
 import css from "./Layout.module.css";
 import Container from "../Container/Container";
 
@@ -15,7 +15,8 @@ const Layout = () => {
   const dispatch = useDispatch()
 
   const onLogOut = () => {
- dispatch(toggleLogin())
+    dispatch(toggleLogin())
+    dispatch(setUserId(null))
 }
   return (
     <Container>
